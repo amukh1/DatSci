@@ -3,6 +3,7 @@
 #include <iostream>
 #include <typeinfo>
 #include <functional>
+#include <utility>
 
 #include "calculus.h"
 #include "regressor.h"
@@ -27,6 +28,7 @@ int main() {
     std::vector<double> x = {1,2,3,4,5};
     std::vector<double> y = {2,3,4,5,6};
     Regressor model;
-    std::cout << model.linear(x,y,100).first << "x + " << model.linear(x,y,100).second << std::endl;
+    std::pair<double, double> result = model.linear(x,y,1000);
+    std::cout << result.first << "x + " << result.second << std::endl;
 
 }
